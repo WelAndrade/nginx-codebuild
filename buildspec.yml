@@ -1,5 +1,5 @@
-# AWS CodeBuild buildspec to build the nginx alpine image
-# By Jason Umiker (jason.umiker@gmail.com)
+# AWS CodeBuild buildspec to build the nginx image
+# By WelingtonAndrade (welewil@gmail.com)
 
 # This requires the following environment variables be set on the Project:
 # AWS_DEFAULT_REGION (Supplied by CodeBuild)
