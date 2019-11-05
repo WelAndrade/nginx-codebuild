@@ -24,13 +24,13 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t $IMAGE_URI .
+      - docker build -t nginx-image-server .
   post_build:
     commands:
       - bash -c "if [ /"$CODEBUILD_BUILD_SUCCEEDING/" == /"0/" ]; then exit 1; fi"
       - echo Build stage successfully completed on `date`
       - echo Pushing the Docker image...
-      - docker push $IMAGE_URI
-      - printf '[{"name":"nginx","imageUri":"%s"}]' "$IMAGE_URI" > images.json
+      - docker push nginx-image-server
+      - printf '[{"name":"nginx","imageUri":"%s"}]' "nginx-image-server" > images.json
 artifacts:
   files: images.json
